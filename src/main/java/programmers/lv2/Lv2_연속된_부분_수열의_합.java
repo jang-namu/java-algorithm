@@ -1,4 +1,4 @@
-package programmers;
+package programmers.lv2;
 /*
 처음 풀이에는 min_length를 유지해서 min_length - 1보다 더 커질경우 removeFirst() 했다.
 => 문제: 마지막 한 요소가 k 라면??
