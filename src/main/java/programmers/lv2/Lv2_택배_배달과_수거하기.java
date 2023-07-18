@@ -18,7 +18,7 @@ public class Lv2_택배_배달과_수거하기 {
 */
 
 
-class Solution {
+class Solution1212 {
     public long solution(int cap, int n, int[] deliveries, int[] pickups) {
         long answer = 0;
 

@@ -13,7 +13,7 @@ public class Lv2_미로_탈출 {
 */
 
 
-class Solution {
+class Solution23123 {
     static char[][] world;
     static boolean[][] visited;
     static int[][] move = { {1, 0}, {0, 1}, {-1, 0}, {0, -1} };

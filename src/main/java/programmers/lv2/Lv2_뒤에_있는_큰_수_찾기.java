@@ -13,7 +13,7 @@ public class Lv2_뒤에_있는_큰_수_찾기 {
     따라서 해당 요소는 pop하게 된다. 언제까지? 스택이 비거나(이런 경우 -1이 들어간다.) 스택에 최상단 요소가 현재요소보다 더 클 때까지.
 */
 
-class Solution {
+class Solution4141 {
     public int[] solution(int[] numbers) {
         var st1 = new Stack<Integer>();
 

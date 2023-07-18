@@ -6,7 +6,7 @@ public class Lv2_숫자_변환하기 {
 }
 
 
-class Solution {
+class Solutionu3464 {
     public int solution(int x, int y, int n) {
 
         int[] nums = new int[y+1];

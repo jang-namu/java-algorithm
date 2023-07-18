@@ -7,7 +7,7 @@ public class Lv2_시소_짝궁 {
 
 
 
-class Solution {
+class Solution2312323 {
     public long solution(int[] weights) {
         long answer = 0;
 

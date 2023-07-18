@@ -12,7 +12,7 @@ public class Lv2_무인도_여행 {
 */
 
 
-class Solution {
+class Solution46346 {
     static String[][] world;
     static int[][] move = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 

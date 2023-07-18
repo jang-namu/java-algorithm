@@ -13,7 +13,7 @@ package programmers.lv2;
 
 import java.util.*;
 
-class Solution {
+class Solution744773247 {
     public int[] solution(int[] sequence, int k) {
         int[] answer = {0, 1000000};
         int min_length = 1000001;

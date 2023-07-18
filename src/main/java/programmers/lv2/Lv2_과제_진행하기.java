@@ -36,7 +36,7 @@ class Task implements Comparable {
 
 public class Lv2_과제_진행하기 {
     public void main(String[] args) {
-        solution();
+        //solution();
     }
     public String[] solution(String[][] plans) {
         String[] answer = {};
@@ -60,4 +60,3 @@ public class Lv2_과제_진행하기 {
     }
 }
 
-*/
