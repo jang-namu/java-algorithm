@@ -12,7 +12,7 @@ public class Lv2_점_찍기 {
         long powD = (long)d * d;
 
         for (long i = 0; i <= d; i = i + k) {
-            answer += Math.sqrt(powD - i * i) / k + 1;
+            answer += (long)Math.sqrt(powD - i * i) / k + 1;
         }
 
         return answer;
