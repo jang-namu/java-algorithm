@@ -22,7 +22,8 @@ public class Lv3_2차원_동전_뒤집기 {
 
         for (int i=1; i < beginning.length; i++) {
             // for (int j=0; j < beginning[0].length; j++) {
-            for (int j=0; j < 1; j++) {
+            // 1열만이 행을 뒤집을 수 있다.
+            for (int j=0; j < 1; j++) {     // for문 없애고 if (beginning[i][0] != target[i][0])과 같음.
                 if (beginning[i][j] != target[i][j]) {
                     answer++;
                     for (int k=0; k < beginning[i].length; k++) {
@@ -47,6 +48,7 @@ public class Lv3_2차원_동전_뒤집기 {
         int answer = 0;
 
         /*
+        //실패
         if (beginning[0][0] != target[0][0]) {
             int[][] begin = new int[beginning.length][];
             int[][] end = new int[target.length][];
@@ -80,6 +82,11 @@ public class Lv3_2차원_동전_뒤집기 {
             (다를 때만 복사 배열을 만들어서 함수 두번 호출 했음)
             간과한 것은 1행 1열이 같아도 행, 열 둘다 뒤집을 수 있다는 것.
             따라서 1행 1열이 같거나 다르거나 나누지 않고 모든 경우의 복사배열을 만들어 함수 두번 호출
+
+            1행 1열은 행, 열을 모두 뒤집을 수 있다.
+            1행은 열을 뒤집을 수 있다.
+            1열은 행을 뒤집을 수 있다.
+            나머지 칸에서는 모두 이전에 맞춰놓은 칸을 깨버리므로 그 무엇도 뒤집을 수 없다.
         */
         int[][] begin = new int[beginning.length][];
         int[][] end = new int[target.length][];
