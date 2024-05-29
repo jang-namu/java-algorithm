@@ -35,9 +35,7 @@ public class boj14500 {
 
         int next = 0;
         for (int[] move : moves) {
-            if ((r + move[0] < 0 || r + move[0] >= N) ||
-                (c + move[1] < 0 || c + move[1] >= M) ||
-                visited[r+ move[0]][c + move[1]])
+            if ((map[r + move[0]][c + move[1]] == 0) || visited[r+ move[0]][c + move[1]])
                 continue;
 
             visited[r+ move[0]][c + move[1]] = true;
@@ -47,18 +45,18 @@ public class boj14500 {
         return result + next;
     }
 
-    // 'ㅜ' 모양 처리
+    // 'ㅜ' 모양 처리, 중심(r,c)를 기준으로 moves 중 3군데
     public static int sum(int r, int c) {
         int max = 0;
         int result = map[r][c];
         for (int i = 0; i < moves.length; i++) {
-            if (boundary(r, c, i)) continue;
+            if (map[r + moves[i][0]][c + moves[i][1]] == 0) continue;
             result += map[r + moves[i][0]][c + moves[i][1]];
             for (int j = i+1; j < moves.length; j++) {
-                if (boundary(r, c, j)) continue;
+                if (map[r + moves[j][0]][c + moves[j][1]] == 0) continue;
                 result += map[r + moves[j][0]][c + moves[j][1]];
                 for (int k = j+1; k < moves.length; k++) {
-                    if (boundary(r, c, k)) continue;
+                    if (map[r + moves[k][0]][c + moves[k][1]] == 0) continue;
                     max = Math.max(max, result + map[r + moves[k][0]][c + moves[k][1]]);
                 }
                 result -= map[r + moves[j][0]][c + moves[j][1]];
@@ -68,16 +66,12 @@ public class boj14500 {
         return max;
     }
 
-    private static boolean boundary(int r, int c, int i) {
-        return (r + moves[i][0] < 0 || r + moves[i][0] >= N) || (c + moves[i][1] < 0 || c + moves[i][1] >= M);
-    }
-
     public static void main(String[] args) throws IOException {
         init();
 
         int result = 0;
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= M; j++) {
                 visited[i][j] = true;
                 result = Math.max(result, dfs(i, j, 0));
                 visited[i][j] = false;
@@ -93,14 +87,15 @@ public class boj14500 {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
-        map = new int[N][M];
-        for (int i = 0; i < N; i++) {
+        map = new int[N+2][M+2]; // 0으로 초기화됨 (0은 자연수가 아니다)
+
+        for (int i = 1; i <= N; i++) {
             st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < M; j++) {
+            for (int j = 1; j <= M; j++) {
                 map[i][j] = Integer.parseInt(st.nextToken());
             }
         }
 
-        visited = new boolean[N][M];
+        visited = new boolean[N+2][M+2];
     }
 }
